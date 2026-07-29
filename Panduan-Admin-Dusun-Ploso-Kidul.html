@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Panduan Lengkap Pengelolaan Website Dusun Ploso Kidul</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root{
+    --c1:#2ecc71; --c2:#3498db; --c3:#e67e22; --c4:#9b59b6; --c5:#e74c3c; --c6:#1abc9c; --c7:#f1c40f;
+    --dark:#2c3e50; --bg:#f4f7fa;
+  }
+  *{box-sizing:border-box;}
+  body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:linear-gradient(135deg,#eafaf1,#eaf4fb 40%,#fdf6e3);
+    margin:0; padding:0; color:#222; line-height:1.65;
+  }
+  header.hero{
+    background:linear-gradient(120deg,var(--c1),var(--c2) 50%,var(--c4));
+    color:#fff; padding:40px 20px; text-align:center;
+    box-shadow:0 4px 15px rgba(0,0,0,.2);
+  }
+  header.hero h1{ font-size:1.9rem; margin:0 0 10px 0; }
+  header.hero h3{ font-weight:400; margin:0; opacity:.95; font-size:1.05rem;}
+  .container{ max-width:900px; margin:0 auto; padding:25px 18px 60px 18px; }
+  .intro-box{
+    background:#fff; border-left:6px solid var(--c2); border-radius:10px;
+    padding:18px 22px; margin:25px 0; box-shadow:0 2px 8px rgba(0,0,0,.08);
+  }
+  nav.toc{
+    background:#fff; border-radius:14px; padding:20px 24px; margin:25px 0;
+    box-shadow:0 4px 12px rgba(0,0,0,.1); border-top:5px solid var(--c7);
+  }
+  nav.toc h2{ margin-top:0; color:var(--dark); }
+  nav.toc ol{ padding-left:22px; }
+  nav.toc li{ margin:8px 0; }
+  nav.toc a{
+    text-decoration:none; color:var(--c2); font-weight:600; transition:.2s;
+  }
+  nav.toc a:hover{ color:var(--c5); padding-left:4px; }
+
+  details.section{
+    background:#fff; border-radius:14px; margin:22px 0; overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,.1); border:1px solid #e5e9ef;
+  }
+  details.section[open]{ box-shadow:0 6px 20px rgba(0,0,0,.15); }
+  summary.sec-head{
+    cursor:pointer; list-style:none; padding:18px 22px; font-size:1.25rem;
+    font-weight:700; color:#fff; display:flex; align-items:center; gap:10px;
+    user-select:none;
+  }
+  summary.sec-head::-webkit-details-marker{ display:none; }
+  summary.sec-head::after{
+    content:'▼'; margin-left:auto; font-size:.9rem; transition:transform .25s;
+  }
+  details[open] summary.sec-head::after{ transform:rotate(180deg); }
+
+  .sec1 .sec-head{ background:linear-gradient(90deg,var(--c5),#c0392b); }
+  .sec2 .sec-head{ background:linear-gradient(90deg,var(--c2),#2980b9); }
+  .sec3 .sec-head{ background:linear-gradient(90deg,var(--c1),#27ae60); }
+  .sec4 .sec-head{ background:linear-gradient(90deg,var(--c3),#d35400); }
+  .sec5 .sec-head{ background:linear-gradient(90deg,var(--c4),#8e44ad); }
+  .sec6 .sec-head{ background:linear-gradient(90deg,#e91e63,#ad1457); }
+  .sec7 .sec-head{ background:linear-gradient(90deg,var(--c6),#16a085); }
+  .sec8 .sec-head{ background:linear-gradient(90deg,var(--c7),#f39c12); color:#3d3300; }
+
+  .sec-body{ padding:20px 26px 28px 26px; }
+  .sec-body h3{ color:var(--dark); border-bottom:2px dashed #ddd; padding-bottom:6px; }
+  .sec-body hr{ border:none; border-top:1px dashed #ccc; margin:22px 0; }
+  .sec-body ul, .sec-body ol{ padding-left:24px; }
+  .sec-body li{ margin:6px 0; }
+  .sec-body code{
+    background:#eef2f7; color:#c0392b; padding:2px 6px; border-radius:5px; font-size:.92em;
+  }
+  pre{
+    background:#2c3e50; color:#ecf0f1; padding:12px 16px; border-radius:8px;
+    overflow-x:auto; font-size:.9rem;
+  }
+  table{ width:100%; border-collapse:collapse; margin:16px 0; }
+  th, td{ border:1px solid #e0e0e0; padding:10px 12px; text-align:left; vertical-align:top; }
+  th{ background:var(--dark); color:#fff; }
+  tr:nth-child(even){ background:#f8fafc; }
+  .callout{
+    background:#fff8e1; border-left:6px solid #f39c12; padding:14px 18px;
+    border-radius:8px; margin:16px 0; font-weight:500;
+  }
+  .callout strong{ color:#c0392b; }
+  footer{
+    text-align:center; padding:30px 15px; color:#555; font-size:.92rem;
+    background:#eef2f7; margin-top:40px;
+  }
+  .badge{
+    display:inline-block; background:var(--c1); color:#fff; border-radius:20px;
+    padding:3px 12px; font-size:.75rem; margin-left:6px;
+  }
+  a.back-top{
+    display:inline-block; margin-top:14px; text-decoration:none; color:var(--c2); font-weight:600;
+    font-size:.85rem;
+  }
+</style>
+</head>
+<body>
+
+<header class="hero" id="top">
+  <h1>📖 Panduan Lengkap Pengelolaan Website Dusun Ploso Kidul</h1>
+  <h3>Program Kerja Gerbang Digital — KKN-BN Angkatan 84.173 UPN "Veteran" Yogyakarta</h3>
+</header>
+
+<div class="container">
+
+  <div class="intro-box">
+    <p>Panduan ini disusun secara <strong>khusus, praktis, dan ramah pemula</strong> untuk Pengurus Dusun Ploso Kidul (Kepala Dusun, Ketua RW/RT, &amp; Tim Pengelola Web). Panduan ini memberikan petunjuk langkah-demi-langkah bagi Anda yang baru pertama kali mengelola website.</p>
+  </div>
+
+  <nav class="toc">
+    <h2>📑 Daftar Isi Panduan</h2>
+    <ol>
+      <li><a href="#sec1">🔐 Cara Login &amp; Keamanan Akun Admin</a></li>
+      <li><a href="#sec2">🗺️ Mengenal Tampilan Dasbor Admin</a></li>
+      <li><a href="#sec3">🌾 Cara Menambah &amp; Mengelola POTENSI DUSUN</a></li>
+      <li><a href="#sec4">📰 Cara Menulis &amp; Mengunggah BERITA DUSUN</a></li>
+      <li><a href="#sec5">🖼️ Cara Mengunggah GALERI DOKUMENTASI FOTO</a></li>
+      <li><a href="#sec6">📩 Cara Membaca &amp; Menindaklanjuti PENGADUAN WARGA</a></li>
+      <li><a href="#sec7">⚙️ Cara Mengubah Kontak &amp; Sosmed Dusun</a></li>
+      <li><a href="#sec8">💡 Tips Praktis Agar Website Tetap Cepat &amp; Rapi</a></li>
+    </ol>
+  </nav>
+
+  <details class="section sec1" id="sec1" open>
+    <summary class="sec-head">🔐 1. Cara Login &amp; Keamanan Akun Admin</summary>
+    <div class="sec-body">
+      <h3>Langkah Masuk (Login):</h3>
+      <ol>
+        <li>Buka browser internet Anda (<strong>Google Chrome</strong>, <strong>Microsoft Edge</strong>, <strong>Mozilla Firefox</strong>, atau <strong>Safari</strong>) di laptop/komputer atau ponsel HP Anda.</li>
+        <li>Ketik alamat web berikut pada kotak alamat browser (di bagian atas):
+          <pre>https://dusunplosokidul.site/wp-admin/</pre>
+        </li>
+        <li>Tekan <strong>Enter</strong>. Anda akan melihat halaman login berwarna bersih dengan kolom isian username dan password.</li>
+        <li>Masukkan data kredensial login Anda:
+          <ul>
+            <li><strong>Nama Pengguna / Email (Username)</strong>: <code>admin_plosokidul</code></li>
+            <li><strong>Kata Sandi (Password)</strong>: <code>plosokidul_123</code></li>
+          </ul>
+        </li>
+        <li>Centang opsi <strong>Ingat Saya</strong> (opsional, agar tidak perlu mengetik ulang setiap hari).</li>
+        <li>Klik tombol <strong>Log Masuk</strong> (berwarna hijau).</li>
+      </ol>
+      <hr>
+      <h3>Cara Mengubah Kata Sandi (Ganti Password):</h3>
+      <p>Demi keamanan akun web dusun, disarankan untuk mengubah kata sandi default secara berkala:</p>
+      <ol>
+        <li>Setelah login, perhatikan pojok kanan atas layar dasbor admin → Arahkan kursor ke tulisan <strong>Halo, admin_plosokidul</strong> → Klik <strong>Sunting Profil Saya</strong>.</li>
+        <li>Gulir layar ke bawah sampai menemukan bagian <strong>Manajemen Akun</strong>.</li>
+        <li>Klik tombol <strong>Setel Kata Sandi Baru</strong>.</li>
+        <li>Ketik kata sandi baru pilihan Anda yang kuat (kombinasi huruf besar, huruf kecil, dan angka).</li>
+        <li>Gulir ke bagian paling bawah → Klik tombol <strong>Perbarui Profil</strong>.</li>
+      </ol>
+      <hr>
+      <h3>Cara Keluar (Logout) Aman:</h3>
+      <p>Jika sudah selesai mengedit website, selalu keluar dari akun:</p>
+      <ul>
+        <li>Arahkan kursor ke nama akun di pojok kanan atas → Klik <strong>Log Keluar</strong>.</li>
+      </ul>
+      <a class="back-top" href="#top">⬆ Kembali ke atas</a>
+    </div>
+  </details>
+
+  <details class="section sec2" id="sec2">
+    <summary class="sec-head">🗺️ 2. Mengenal Tampilan Dasbor Admin</summary>
+    <div class="sec-body">
+      <p>Setelah login, Anda akan masuk ke halaman <strong>Dasbor Utama (Dashboard)</strong>. Di sebelah kiri layar, terdapat menu navigasi berwarna gelap. Berikut adalah fungsi utama dari setiap menu:</p>
+      <table>
+        <tr><th>Nama Menu</th><th>Gambar Ikon</th><th>Fungsi &amp; Penggunaan</th></tr>
+        <tr><td><strong>Ringkasan</strong></td><td>📊 / 🏠</td><td>Halaman utama untuk melihat ringkasan jumlah Berita, Potensi, Galeri, dan Pengaduan yang sudah terbit.</td></tr>
+        <tr><td><strong>Berita</strong></td><td>📰</td><td>Tempat menulis warta dusun, pengumuman gotong royong, agenda pembangunan, atau laporan kegiatan warga.</td></tr>
+        <tr><td><strong>Potensi Dusun</strong></td><td>🌾</td><td>Tempat mengisi data produk UMKM, pertanian padi organik, budidaya ikan tawar, atau potensi kerajinan warga.</td></tr>
+        <tr><td><strong>Galeri Foto</strong></td><td>🖼️</td><td>Tempat mengunggah album foto dokumentasi acara adat, Jathilan, Hadrohan, Merti Dusun, atau sarana fisik.</td></tr>
+        <tr><td><strong>Pengaduan</strong></td><td>📩</td><td>Tempat <strong>RAHASIA / PRIVAT</strong> untuk membaca surat keluhan atau pengaduan online yang dikirimkan warga.</td></tr>
+        <tr><td><strong>Pengaturan Dasar</strong></td><td>⚙️</td><td>Tempat mengubah alamat email resmi dusun, link sosial media (FB, IG, YouTube), dan link video profil dusun.</td></tr>
+      </table>
+      <a class="back-top" href="#top">⬆ Kembali ke atas</a>
+    </div>
+  </details>
+
+  <details class="section sec3" id="sec3">
+    <summary class="sec-head">🌾 3. Cara Menambah &amp; Mengelola POTENSI DUSUN</summary>
+    <div class="sec-body">
+      <p>Menu <strong>Potensi Dusun</strong> digunakan untuk memperkenalkan sumber daya unggulan Dusun Ploso Kidul ke masyarakat luas, seperti hasil tani, kolam ikan, olahan pangan, atau usaha warga.</p>
+      <h3>➕ Langkah Menambah Potensi Baru:</h3>
+      <ol>
+        <li>Di menu sebelah kiri dasbor, klik <strong>Potensi Dusun</strong> → Klik tombol <strong>Tambah Baru</strong> (di bagian atas).</li>
+        <li><strong>Kolom Judul</strong>: Ketik nama potensi dusun yang jelas.
+          <br><em>Contoh</em>: <code>Budidaya Ikan Nila &amp; Gurame Dusun Ploso Kidul</code>
+        </li>
+        <li><strong>Kolom Isi Deskripsi</strong> (Kotak besar di tengah): Tuliskan penjelasan lengkap mengenai potensi tersebut.
+          <br><em>Contoh</em>: Jelaskan sejarah singkat usaha, jenis produk yang dihasilkan, kapasitas panen, dan keunggulannya.
+        </li>
+        <li><strong>Pengaturan Sisi Kanan (Kolom Kanan)</strong>:
+          <ul>
+            <li><strong>Ikon Potensi</strong>: Masukkan emoji atau simbol yang sesuai (contoh: 🐟 untuk perikanan, 🌾 untuk pertanian, 🍞 untuk UMKM).</li>
+            <li><strong>Kategori Potensi</strong>: Pilih kategori yang cocok (misal: <em>Pertanian</em>, <em>Perikanan</em>, <em>UMKM</em>, atau <em>Kerajinan</em>).</li>
+            <li><strong>Gambar Unggulan (Featured Image)</strong>:
+              <ol>
+                <li>Klik tulisan <strong>Tetapkan Gambar Unggulan</strong> di pojok kanan bawah.</li>
+                <li>Klik tab <strong>Unggah Berkas</strong> → Klik <strong>Pilih Berkas</strong>.</li>
+                <li>Pilih foto produk/potensi yang ada di komputer/HP Anda.</li>
+                <li>Setelah terunggah, klik tombol hijau <strong>Tetapkan Gambar Unggulan</strong>.</li>
+              </ol>
+            </li>
+          </ul>
+        </li>
+        <li><strong>Menerbitkan</strong>: Klik tombol biru/hijau <strong>Terbitkan (Publish)</strong> di pojok kanan atas. Potensi baru Anda akan langsung tampil di halaman publik <em>Potensi Dusun</em>.</li>
+      </ol>
+      <hr>
+      <h3>✏️ Cara Edit (Mengubah) atau Menghapus Potensi:</h3>
+      <ul>
+        <li><strong>Mengedit</strong>: Klik menu <strong>Potensi Dusun</strong> → Arahkan kursor pada nama potensi yang ingin diubah → Klik <strong>Sunting (Edit)</strong> → Ubah teks/foto → Klik <strong>Perbarui</strong>.</li>
+        <li><strong>Menghapus</strong>: Klik <strong>Potensi Dusun</strong> → Arahkan kursor ke nama potensi → Klik <strong>Buang ke Tong Sampah (Trash)</strong>.</li>
+      </ul>
+      <a class="back-top" href="#top">⬆ Kembali ke atas</a>
+    </div>
+  </details>
+
+  <details class="section sec4" id="sec4">
+    <summary class="sec-head">📰 4. Cara Menulis &amp; Mengunggah BERITA DUSUN</summary>
+    <div class="sec-body">
+      <p>Menu <strong>Berita</strong> digunakan untuk menginformasikan kegiatan sehari-hari warga, laporan pembangunan, pengumuman rapat dusun, atau acara keagamaan.</p>
+      <h3>➕ Langkah Menulis Berita Baru:</h3>
+      <ol>
+        <li>Di menu samping kiri, klik <strong>Berita</strong> → Klik <strong>Tambah Baru</strong>.</li>
+        <li><strong>Judul Berita</strong>: Ketik judul yang menarik dan informatif.
+          <br><em>Contoh</em>: <code>Warga Dusun Ploso Kidul Gelar Kerja Bakti Bersihkan Saluran Irigasi Sawah</code>
+        </li>
+        <li><strong>Isi Berita</strong>: Tuliskan berita secara lengkap di kotak editor utama.
+          <ul><li>Sebutkan <strong>apa</strong> kegiatannya, <strong>kapan</strong> dilaksanakannya, <strong>siapa</strong> saja yang hadir, dan <strong>apa</strong> manfaatnya.</li></ul>
+        </li>
+        <li><strong>Menyisipkan Gambar di Dalam Teks (Opsional)</strong>:
+          <ul><li>Jika ingin menyisipkan foto di tengah paragraf: Klik ikon <strong>+ (Tambah Blok)</strong> → Pilih <strong>Gambar</strong> → Unggah foto Anda.</li></ul>
+        </li>
+        <li><strong>Pengaturan Kolom Kanan</strong>:
+          <ul>
+            <li><strong>Kategori</strong>: Centang kategori berita yang sesuai (misal: <em>Kegiatan Warga</em>, <em>Pengumuman</em>, atau <em>Pembangunan</em>).</li>
+            <li><strong>Gambar Unggulan (Thumbnail Berita)</strong>: <strong>WAJIB DIISI!</strong> Klik <strong>Tetapkan Gambar Unggulan</strong> → Unggah foto terbaik yang mewakili kegiatan tersebut.</li>
+          </ul>
+        </li>
+        <li>Klik <strong>Terbitkan (Publish)</strong> di kanan atas. Berita akan otomatis tampil di Beranda depan dan di Halaman Berita.</li>
+      </ol>
+      <a class="back-top" href="#top">⬆ Kembali ke atas</a>
+    </div>
+  </details>
+
+  <details class="section sec5" id="sec5">
+    <summary class="sec-head">🖼️ 5. Cara Mengunggah GALERI DOKUMENTASI FOTO</summary>
+    <div class="sec-body">
+      <p>Menu <strong>Galeri Foto</strong> digunakan untuk mengabadikan dokumentasi visual momen berharga di dusun (Merti Dusun, pentas seni Jathilan, pengajian, pelatihan, dll.).</p>
+      <h3>➕ Langkah Menambah Album Foto Galeri:</h3>
+      <ol>
+        <li>Di menu sebelah kiri, klik <strong>Galeri Foto</strong> → Klik <strong>Tambah Baru</strong>.</li>
+        <li><strong>Judul Galeri</strong>: Ketik nama acara/dokumentasi.
+          <br><em>Contoh</em>: <code>Dokumentasi Pelatihan Pembuatan Pakan Mandiri Ikan</code>
+        </li>
+        <li><strong>Deskripsi Singkat</strong>: Tuliskan penjelasan singkat acara pada kotak utama di tengah.</li>
+        <li><strong>Pengaturan Kolom Kanan</strong>:
+          <ul>
+            <li><strong>Album Galeri</strong>: Centang kategori album yang cocok (<em>Kebudayaan</em>, <em>Keagamaan</em>, <em>Pembangunan</em>, atau <em>Kemasyarakatan</em>).</li>
+            <li><strong>Gambar Unggulan (Foto Sampul)</strong>: Klik <strong>Tetapkan Gambar Unggulan</strong> → Unggah foto utama acara.</li>
+          </ul>
+        </li>
+        <li>Klik <strong>Terbitkan</strong>. Album foto baru siap dilihat oleh publik di halaman <em>Galeri Dokumentasi</em>.</li>
+      </ol>
+      <a class="back-top" href="#top">⬆ Kembali ke atas</a>
+    </div>
+  </details>
+
+  <details class="section sec6" id="sec6">
+    <summary class="sec-head">📩 6. Cara Membaca &amp; Menindaklanjuti PENGADUAN WARGA</summary>
+    <div class="sec-body">
+      <p>Menu <strong>Pengaduan</strong> berfungsi sebagai kotak saran digital warga Dusun Ploso Kidul.</p>
+      <div class="callout">
+        <strong>Penting:</strong> Seluruh isi pengaduan bersifat <strong>PRIVAT &amp; RAHASIA</strong>. Data pengaduan <strong>TIDAK AKAN TAMPIL</strong> di website umum, dan hanya dapat dibaca oleh Pengurus Dusun yang memegang akun admin.
+      </div>
+      <h3>📑 Langkah Membaca Laporan Masuk:</h3>
+      <ol>
+        <li>Klik menu <strong>Pengaduan</strong> di sebelah kiri. Anda akan melihat daftar surat pengaduan dari warga beserta tanggal masuknya.</li>
+        <li>Klik <strong>Judul Laporan</strong> untuk membuka dan membaca isi keluhan/saran warga.</li>
+        <li>Di dalam laporan, periksa data pelapor:
+          <ul>
+            <li><strong>Nama Pelapor</strong></li>
+            <li><strong>Email / Nomor Telepon</strong></li>
+            <li><strong>Alamat / RT/RW Pelapor</strong></li>
+            <li><strong>Isi Pesan Pengaduan</strong></li>
+          </ul>
+        </li>
+        <li><strong>Tindak Lanjut</strong>: Kepala Dusun atau Pengurus RT/RW dapat menghubungi warga pelapor melalui email/kontak yang dicantumkan untuk koordinasi penyelesaian secara kekeluargaan.</li>
+      </ol>
+      <a class="back-top" href="#top">⬆ Kembali ke atas</a>
+    </div>
+  </details>
+
+  <details class="section sec7" id="sec7">
+    <summary class="sec-head">⚙️ 7. Cara Mengubah Kontak &amp; Sosmed Dusun</summary>
+    <div class="sec-body">
+      <p>Jika ada perubahan alamat email resmi dusun, link sosial media, atau link video YouTube dusun:</p>
+      <ol>
+        <li>Klik menu <strong>Pengaturan Dasar</strong> di menu samping kiri.</li>
+        <li>Anda akan melihat form isian sederhana:
+          <ul>
+            <li><strong>Alamat Surel (Email Dusun)</strong>: Masukkan email resmi (<code>dusunplosokidul173@gmail.com</code>).</li>
+            <li><strong>Tautan Facebook Resmi</strong>: Masukkan link profil/page Facebook dusun.</li>
+            <li><strong>Tautan Instagram Resmi</strong>: Masukkan link profil Instagram dusun.</li>
+            <li><strong>Tautan YouTube Resmi</strong>: Masukkan link channel YouTube dusun.</li>
+            <li><strong>Link Embed Video Profil</strong>: Masukkan link sematan YouTube (contoh: <code>https://www.youtube.com/embed/nLD-YtIzBAY</code>).</li>
+          </ul>
+        </li>
+        <li>Klik tombol biru <strong>Simpan Pengaturan</strong> di bagian bawah.</li>
+        <li>Seluruh bagian footer dan halaman profil di website umum akan diperbarui secara otomatis.</li>
+      </ol>
+      <a class="back-top" href="#top">⬆ Kembali ke atas</a>
+    </div>
+  </details>
+
+  <details class="section sec8" id="sec8">
+    <summary class="sec-head">💡 8. Tips Praktis Agar Website Tetap Cepat &amp; Rapi</summary>
+    <div class="sec-body">
+      <p>Agar website Dusun Ploso Kidul tetap berkinerja cepat, aman, dan enak dilihat saat dibuka dari handphone warga:</p>
+      <ol>
+        <li><strong>Ukuran Foto Yang Ideal</strong>:
+          <ul><li>Sebelum mengunggah foto ke website, usahakan ukuran file foto <strong>di bawah 2 Megabyte (MB)</strong>. Foto yang terlalu besar dari kamera HP sebaiknya dikompres/diperkecil ukurannya terlebih dahulu agar website tidak terasa berat saat dibuka warga dengan sinyal terbatas.</li></ul>
+        </li>
+        <li><strong>Gunakan Judul Yang Jelas &amp; Bahasa Sopan</strong>:
+          <ul><li>Gunakan ejaan bahasa Indonesia yang baik dan benar. Hindari menulis judul dengan huruf kapital semua (<em>CAPSLOCK</em>).</li></ul>
+        </li>
+        <li><strong>Pastikan Selalu Mengisi Gambar Unggulan</strong>:
+          <ul><li>Setiap kali membuat <em>Berita</em>, <em>Potensi</em>, atau <em>Galeri</em>, <strong>selalu isi bagian Gambar Unggulan (Featured Image)</strong>. Jika kosong, kartu berita di halaman depan akan menampilkan foto bawaan (<em>default</em>).</li></ul>
+        </li>
+        <li><strong>Simpan Kredensial Login Dengan Aman</strong>:
+          <ul><li>Catat username dan password admin di buku catatan pengurus dusun agar tidak hilang jika terjadi pergantian pengelola web.</li></ul>
+        </li>
+      </ol>
+      <a class="back-top" href="#top">⬆ Kembali ke atas</a>
+    </div>
+  </details>
+
+</div>
+
+<footer>
+  <em>Dokumen panduan ini disusun oleh Tim KKN-BN Angkatan 84.173 Universitas Pembangunan Nasional "Veteran" Yogyakarta demi mendukung keberlanjutan Program Kerja Gerbang Digital Dusun Ploso Kidul.</em> 🌾✨
+</footer>
+
+</body>
+</html>

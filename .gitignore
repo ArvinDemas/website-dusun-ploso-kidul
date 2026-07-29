@@ -1,0 +1,69 @@
+# ==============================================================================
+# GITIGNORE - WEBSITE DUSUN PLOSO KIDUL
+# Program Kerja Gerbang Digital - KKN-BN Angkatan 84.173 UPN "Veteran" Yogyakarta
+# ==============================================================================
+
+# 1. File ZIP & Paket Arsip Besar
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# 2. Database Dumps & SQL Backups
+*.sql
+*.sql.gz
+
+# 3. File Video / Audio Media Besar
+*.mp4
+*.mov
+*.m4v
+*.avi
+*.mp3
+
+# 4. File Uji Coba & Test HTML Lokal
+/test-components.html
+/test-hero.html
+/test-tokens.html
+/reset-admin.php
+
+# 5. WordPress Core & System Files (Hanya lacak custom theme & panduan)
+/wp-admin/
+/wp-includes/
+/wp-config.php
+/wp-config-sample.php
+/wp-activate.php
+/wp-blog-header.php
+/wp-comments-post.php
+/wp-cron.php
+/wp-links-opml.php
+/wp-load.php
+/wp-login.php
+/wp-mail.php
+/wp-settings.php
+/wp-signup.php
+/wp-trackback.php
+/xmlrpc.php
+/readme.html
+/license.txt
+/robots.txt
+/sitemap.xml
+
+# 6. Dynamic Content Uploads (Media unggahan warga/admin)
+/wp-content/uploads/
+/wp-content/upgrade/
+/wp-content/cache/
+/wp-content/plugins/
+
+# 7. Tools Internal & Skills IDE
+/antigravity-awesome-skills/
+/.gemini/
+/.vscode/
+/.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 8. File Temporary & Log
+*.log
+*.tmp
+*.temp

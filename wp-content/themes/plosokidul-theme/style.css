@@ -1,0 +1,22 @@
+/*
+Theme Name:  Plosokidul Theme
+Theme URI:   https://plosokidul.desa.id
+Author:      KKN-BN Angkatan 84 Dusun Ploso Kidul
+Author URI:  https://plosokidul.desa.id
+Description: Tema resmi Website Desa Plosokidul, Kecamatan Ngluwar, Kabupaten Magelang. Dibuat oleh mahasiswa KKN-BN Angkatan 84 dalam program kerja "Gerbang Digital". Mengusung gaya visual Rural Contemporary dengan palet warna Hijau Menoreh (#2D6A4F), Coklat Tanah (#6B4226), dan Terakota (#8D4D4E).
+Version:     1.0.0
+Requires at least: 6.4
+Requires PHP: 7.4
+License:     GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: plosokidul-theme
+Tags:        custom-menu, featured-images, responsive-layout, translation-ready
+
+/* ============================================================
+   CATATAN PENGEMBANG:
+   File ini HANYA berisi header metadata tema WordPress.
+   Semua CSS desain ditulis di assets/css/ yang dimuat via
+   functions.php menggunakan wp_enqueue_style().
+   Jangan menulis CSS langsung di sini.
+   ============================================================ */
+*/

@@ -1,0 +1,117 @@
+/**
+ * Plosokidul Theme — design-tokens.css
+ *
+ * Mendefinisikan bahasa visual dasar tema (warna, tipografi, spasi,
+ * dan lekukan sudut) dalam bentuk CSS Custom Properties (Variabel CSS).
+ *
+ * @package plosokidul-theme
+ * @version 1.0.0
+ */
+
+:root {
+  /* ===========================================================================
+     1. WARNA (COLOR PALETTE)
+     =========================================================================== */
+  /* Warna Inti (Brand Colors) */
+  --color-primary: #2D6A4F;            /* Hijau Menoreh - melambangkan alam, tani, kesejukan */
+  --color-primary-light: #40916C;      /* Hijau Terang (hover state) */
+  --color-primary-dark: #1B4332;       /* Hijau Gelap (active state / footer) */
+  
+  --color-secondary: #6B4226;          /* Coklat Tanah - melambangkan bumi, tradisi, kayu */
+  --color-secondary-light: #8F5B38;    /* Coklat Terang (hover state) */
+  
+  --color-tertiary: #8D4D4E;           /* Terakota - melambangkan batu bata, kehangatan */
+  --color-tertiary-light: #A76263;     /* Terakota Terang (hover state) */
+  
+  --color-accent: #F4A51E;             /* Kuning Padi - melambangkan kemakmuran & energi */
+  
+  /* Latar Belakang & Neutral */
+  --color-bg: #F9F6F0;                 /* Krem Bersih - latar belakang utama yang hangat */
+  --color-bg-card: #FFFFFF;            /* Putih Bersih - latar belakang kartu */
+  
+  --color-text-main: #1A1A2E;          /* Navy Gelap - teks utama (kontras tinggi, keterbacaan tinggi) */
+  --color-text-muted: #6B7280;         /* Abu Sedang - teks sekunder, deskripsi, meta info */
+  
+  --color-border: #E5E7EB;             /* Abu Terang - border tipis untuk elemen UI */
+  --color-white: #FFFFFF;              /* Putih murni */
+  --color-black: #000000;              /* Hitam murni */
+
+  /* Warna Fungsional */
+  --color-success: #10B981;            /* Hijau Sukses (notifikasi/status) */
+  --color-warning: #FBBF24;            /* Kuning Peringatan */
+  --color-error: #EF4444;              /* Merah Bahaya/Hapus */
+
+  /* Transparansi (Glassmorphism & Overlay) */
+  --color-white-trans-80: rgba(255, 255, 255, 0.8);
+  --color-white-trans-10: rgba(255, 255, 255, 0.1);
+  --color-black-trans-40: rgba(0, 0, 0, 0.4);
+  --color-black-trans-60: rgba(0, 0, 0, 0.6);
+  --color-primary-trans-10: rgba(45, 106, 79, 0.1);
+  --color-primary-trans-20: rgba(45, 106, 79, 0.2);
+
+  /* Shadow & Kedalaman (Visual Depth) */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  --shadow-hover: 0 20px 25px -5px rgba(45, 106, 79, 0.08), 0 10px 10px -5px rgba(45, 106, 79, 0.03);
+
+  /* ===========================================================================
+     2. TIPOGRAFI (TYPOGRAPHY)
+     =========================================================================== */
+  /* Font Family */
+  --font-headline: 'Playfair Display', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* Skala Ukuran Font (Font Size Scale) */
+  --font-size-xs: 0.75rem;             /* 12px - Caption, metadata */
+  --font-size-sm: 0.875rem;            /* 14px - Label, subtext */
+  --font-size-base: 1rem;              /* 16px - Teks utama paragraf */
+  --font-size-lg: 1.125rem;            /* 18px - Sub-heading kecil / intro */
+  --font-size-xl: 1.25rem;             /* 20px - H4 */
+  --font-size-2xl: 1.5rem;             /* 24px - H3 */
+  --font-size-3xl: 2rem;               /* 32px - H2 */
+  --font-size-4xl: 3rem;               /* 48px - H1 / Hero Title (Desktop) */
+
+  /* Ketebalan Font (Font Weight) */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Tinggi Baris (Line Height Scale) */
+  --line-height-none: 1;
+  --line-height-tight: 1.2;            /* Untuk Headings */
+  --line-height-normal: 1.5;           /* Untuk teks biasa */
+  --line-height-relaxed: 1.75;         /* Untuk artikel/berita (keterbacaan tinggi) */
+
+  /* Spasi Huruf (Letter Spacing) */
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0em;
+  --letter-spacing-wide: 0.02em;
+
+  /* ===========================================================================
+     3. SPASI (SPACING SCALE)
+     =========================================================================== */
+  --spacing-2xs: 4px;                  /* Micro gaps */
+  --spacing-xs: 8px;                   /* Tight spacing */
+  --spacing-sm: 16px;                  /* Regular gap / inline padding */
+  --spacing-md: 24px;                  /* Section padding kecil / card gap */
+  --spacing-lg: 32px;                  /* Container grid gap / section padding */
+  --spacing-xl: 48px;                  /* Large block gaps */
+  --spacing-2xl: 64px;                 /* Giant margins / Hero top-bottom */
+
+  /* ===========================================================================
+     4. RADIUS SUDUT (BORDER RADIUS)
+     =========================================================================== */
+  --radius-sm: 4px;                    /* Badge, label */
+  --radius-md: 6px;                    /* Tombol, input text */
+  --radius-lg: 12px;                   /* Kartu berita, galeri, box */
+  --radius-circle: 9999px;             /* Tombol bulat sempurna */
+
+  /* ===========================================================================
+     5. TRANSISI (TRANSITIONS)
+     =========================================================================== */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}

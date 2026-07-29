@@ -1,0 +1,285 @@
+/**
+ * Plosokidul Theme — assets/css/hero.css
+ *
+ * Gaya khusus untuk Hero Section halaman beranda.
+ * Di-enqueue terpisah dari main.css agar hanya dimuat di halaman yang membutuhkan.
+ *
+ * Prinsip yang diterapkan (dari skill antigravity-design-expert):
+ * - Animasi entrance staggered: elemen muncul berurutan tiap 0.2s
+ * - will-change: transform pada elemen animasi untuk GPU rendering
+ * - prefers-reduced-motion dihormati penuh
+ *
+ * @package plosokidul-theme
+ * @version 1.0.0
+ */
+
+/* ===========================================================================
+   HERO SECTION — STRUKTUR UTAMA
+   =========================================================================== */
+.hero-section {
+  position: relative;
+  min-height: 100svh;         /* svh = small viewport height (akurat di mobile) */
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--color-primary-dark); /* Fallback warna jika gambar/video belum load */
+}
+
+/* ===========================================================================
+   HERO BACKGROUND (VIDEO + POSTER IMAGE)
+   =========================================================================== */
+.hero-bg {
+  position: absolute;
+  inset: 0;                   /* shorthand untuk top/right/bottom/left: 0 */
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Poster Image — tampil PERTAMA, menjadi LCP element */
+.hero-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  z-index: 1;
+  /* fetchpriority="high" di-set di HTML — browser prioritaskan load ini */
+}
+
+/* Video Background — dimuat lazy via JS setelah LCP tercatat */
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  z-index: 2;
+  opacity: 0;                 /* Tersembunyi sampai video buffered & siap diputar */
+  transition: opacity 1.2s ease;
+  /* will-change: opacity — GPU rendering untuk transisi (dari skill antigravity) */
+  will-change: opacity;
+}
+
+/* Kelas yang di-toggle JS saat video siap */
+.hero-video.is-playing {
+  opacity: 1;
+}
+
+/* ===========================================================================
+   HERO OVERLAY — GRADIEN GELAP
+   =========================================================================== */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  /* Gradien berlapis: 
+     - Bawah sangat gelap (untuk keterbacaan teks)
+     - Tengah setengah gelap
+     - Atas transparan (agar langit/alam masih terlihat) */
+  background: linear-gradient(
+    to top,
+    rgba(26, 26, 46, 0.88) 0%,
+    rgba(26, 26, 46, 0.55) 40%,
+    rgba(26, 26, 46, 0.20) 70%,
+    rgba(26, 26, 46, 0.10) 100%
+  );
+}
+
+/* ===========================================================================
+   HERO CONTENT — TEKS DAN CTA
+   =========================================================================== */
+.hero-content {
+  position: relative;
+  z-index: 4;
+  max-width: 780px;
+  padding-top: var(--spacing-2xl);    /* Kompensasi sticky header */
+  padding-bottom: var(--spacing-2xl);
+}
+
+/* Tag lokasi kecil di atas judul */
+.hero-tagline {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2xs);
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-sm);
+  /* GPU-ready */
+  will-change: transform, opacity;
+}
+
+/* Garis dekoratif di kiri tagline */
+.hero-tagline::before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+/* Judul utama H1 — Playfair Display elegan */
+.hero-title {
+  font-family: var(--font-headline);
+  font-size: clamp(2.5rem, 6vw, 5rem);   /* fluid typography: 40px hingga 80px */
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--spacing-md);
+  /* Italic pada em di dalam judul akan menggunakan gaya Playfair yang elegan */
+  will-change: transform, opacity;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--color-bg);               /* Krem bersih — lebih hangat dari pure white */
+}
+
+/* Sub-judul / deskripsi singkat */
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.8vw, 1.2rem); /* fluid: 16px hingga 19px */
+  font-weight: var(--font-weight-light);
+  color: rgba(249, 246, 240, 0.85);       /* Krem dengan sedikit transparansi */
+  line-height: var(--line-height-relaxed);
+  max-width: 600px;
+  margin-bottom: var(--spacing-lg);
+  will-change: transform, opacity;
+}
+
+/* Wrapper dua tombol CTA */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+  will-change: transform, opacity;
+}
+
+/* Override tombol secondary agar kontras di atas latar gelap hero */
+.btn-secondary--light {
+  border-color: rgba(249, 246, 240, 0.7);
+  color: var(--color-bg);
+}
+.btn-secondary--light:hover {
+  background-color: rgba(249, 246, 240, 0.15);
+  border-color: var(--color-bg);
+  color: var(--color-white);
+}
+
+/* ===========================================================================
+   ANIMASI ENTRANCE STAGGERED (Antigravity Principle)
+   Setiap elemen muncul dari bawah, berurutan tiap 0.2s
+   =========================================================================== */
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-tagline  { animation: heroFadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both; }
+.hero-title    { animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both; }
+.hero-subtitle { animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.65s both; }
+.hero-actions  { animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.85s both; }
+
+/* ===========================================================================
+   SCROLL INDICATOR — Animasi panah/dot mengundang scroll ke bawah
+   =========================================================================== */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: var(--spacing-lg);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-2xs);
+  animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.2s both;
+}
+
+.scroll-dot {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-circle);
+  background-color: var(--color-bg);
+  opacity: 0.7;
+  animation: scrollBounce 1.8s ease-in-out infinite;
+}
+.scroll-dot:nth-child(2) { animation-delay: 0.2s; }
+.scroll-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes scrollBounce {
+  0%, 100% { opacity: 0.3; transform: translateY(0); }
+  50%       { opacity: 1;   transform: translateY(8px); }
+}
+
+/* Lingkaran dekoratif scroll indicator */
+.scroll-ring {
+  width: 36px;
+  height: 36px;
+  border: 2px solid rgba(249, 246, 240, 0.4);
+  border-radius: var(--radius-circle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+/* ===========================================================================
+   PREFERS-REDUCED-MOTION — Respek preferensi aksesibilitas pengguna
+   Dari skill: antigravity-design-expert — Execution Constraints
+   =========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .hero-tagline,
+  .hero-title,
+  .hero-subtitle,
+  .hero-actions,
+  .hero-scroll-indicator {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .scroll-dot {
+    animation: none;
+    opacity: 0.7;
+  }
+  .scroll-ring {
+    animation: none;
+  }
+  .hero-video {
+    transition: none;
+  }
+}
+
+/* ===========================================================================
+   RESPONSIVENESS
+   =========================================================================== */
+@media (max-width: 768px) {
+  .hero-content {
+    padding-top: calc(var(--spacing-2xl) + var(--spacing-md));
+    text-align: center;
+  }
+  .hero-tagline {
+    justify-content: center;
+  }
+  .hero-subtitle {
+    max-width: 100%;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+}
