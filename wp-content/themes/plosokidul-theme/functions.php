@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 // =============================================================================
 // 1. KONSTANTA TEMA
 // =============================================================================
-define( 'PLOSOKIDUL_VERSION', '1.8.0' );
+define( 'PLOSOKIDUL_VERSION', '1.9.0' );
 define( 'PLOSOKIDUL_DIR', get_template_directory() );
 define( 'PLOSOKIDUL_URI', get_template_directory_uri() );
 
@@ -249,7 +249,36 @@ function plosokidul_excerpt_length() {
 }
 add_filter( 'excerpt_length', 'plosokidul_excerpt_length' );
 
-// Ganti tanda "..." di akhir excerpt dengan tanda yang lebih rapi
+// =============================================================================
+// 6. AUTOMATIC TEMPLATE ROUTING FALLBACK (BULLETPROOF PAGE LOADING)
+// =============================================================================
+add_filter( 'template_include', 'plosokidul_auto_route_page_templates', 99 );
+function plosokidul_auto_route_page_templates( $template ) {
+    if ( is_admin() ) {
+        return $template;
+    }
+
+    $request_uri = trim( parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH ), '/' );
+
+    $routes = array(
+        'profil'       => 'page-templates/template-profil.php',
+        'organisasi'   => 'page-templates/template-organisasi.php',
+        'berita'       => 'page-templates/template-berita.php',
+        'galeri'       => 'page-templates/template-galeri.php',
+        'kependudukan' => 'page-templates/template-kependudukan.php',
+        'layanan'      => 'page-templates/template-layanan.php',
+        'kontak'       => 'page-templates/template-kontak.php',
+    );
+
+    if ( isset( $routes[$request_uri] ) ) {
+        $custom_template = PLOSOKIDUL_DIR . '/' . $routes[$request_uri];
+        if ( file_exists( $custom_template ) ) {
+            return $custom_template;
+        }
+    }
+
+    return $template;
+}
 function plosokidul_excerpt_more( $more ) {
     return '&hellip;';
 }
