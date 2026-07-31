@@ -114,13 +114,13 @@ add_action( 'init', 'plosokidul_register_menus' );
 function plosokidul_default_nav_menu() {
     $items = array(
         '/'             => 'Beranda',
-        '/profil/'      => 'Profil Dusun',
-        '/organisasi/'  => 'Struktur Organisasi',
-        '/berita/'      => 'Berita & Warta',
+        '/profil/'      => 'Profil',
+        '/organisasi/'  => 'Struktur',
+        '/berita/'      => 'Berita',
         '/galeri/'      => 'Galeri',
         '/kependudukan/'=> 'Kependudukan',
-        '/layanan/'     => 'Pelayanan & Pengaduan',
-        '/kontak/'      => 'Hubungi Kami',
+        '/layanan/'     => 'Layanan',
+        '/kontak/'      => 'Kontak',
     );
     echo '<ul id="primary-menu" class="menu">';
     foreach ( $items as $url => $label ) {

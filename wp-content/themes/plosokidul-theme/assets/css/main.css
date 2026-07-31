@@ -161,6 +161,7 @@ img {
   padding: 4px 6px;
   border-radius: var(--radius-sm);
   transition: all var(--transition-fast);
+  white-space: nowrap;
 }
 .main-navigation a:hover {
   color: var(--color-primary);
