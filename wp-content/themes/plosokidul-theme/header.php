@@ -66,7 +66,7 @@
                     'theme_location' => 'primary',
                     'menu_id'        => 'primary-menu',
                     'container'      => false,
-                    'fallback_cb'    => '__return_false',
+                    'fallback_cb'    => 'plosokidul_default_nav_menu',
                 ) ); ?>
 
             </nav><!-- #site-navigation -->

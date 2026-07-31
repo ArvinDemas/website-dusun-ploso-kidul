@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 // =============================================================================
 // 1. KONSTANTA TEMA
 // =============================================================================
-define( 'PLOSOKIDUL_VERSION', '1.7.0' );
+define( 'PLOSOKIDUL_VERSION', '1.8.0' );
 define( 'PLOSOKIDUL_DIR', get_template_directory() );
 define( 'PLOSOKIDUL_URI', get_template_directory_uri() );
 
@@ -109,6 +109,25 @@ function plosokidul_register_menus() {
     ) );
 }
 add_action( 'init', 'plosokidul_register_menus' );
+
+// Fallback otomatis jika menu di wp-admin belum/tidak sengaja terhapus
+function plosokidul_default_nav_menu() {
+    $items = array(
+        '/'             => 'Beranda',
+        '/profil/'      => 'Profil Dusun',
+        '/organisasi/'  => 'Struktur Organisasi',
+        '/berita/'      => 'Berita & Warta',
+        '/galeri/'      => 'Galeri',
+        '/kependudukan/'=> 'Kependudukan',
+        '/layanan/'     => 'Pelayanan & Pengaduan',
+        '/kontak/'      => 'Hubungi Kami',
+    );
+    echo '<ul id="primary-menu" class="menu">';
+    foreach ( $items as $url => $label ) {
+        echo '<li><a href="' . esc_url( home_url( $url ) ) . '">' . esc_html( $label ) . '</a></li>';
+    }
+    echo '</ul>';
+}
 
 
 // =============================================================================
