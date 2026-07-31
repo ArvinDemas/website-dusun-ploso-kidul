@@ -122,17 +122,9 @@ function plosokidul_pengaturan_dasar_render() {
 // =============================================================================
 add_action( 'admin_menu', 'plosokidul_simplify_admin_menu_sidebar', 999 );
 function plosokidul_simplify_admin_menu_sidebar() {
-    
-    // Sembunyikan menu teknis yang membingungkan admin desa awam
-    remove_menu_page( 'upload.php' );                  // Media
-    remove_menu_page( 'edit.php?post_type=page' );     // Pages
+    // Sembunyikan menu teknis yang tidak diperlukan
     remove_menu_page( 'edit-comments.php' );           // Comments
-    remove_menu_page( 'themes.php' );                  // Appearance
-    remove_menu_page( 'plugins.php' );                 // Plugins
-    remove_menu_page( 'users.php' );                   // Users
-    remove_menu_page( 'tools.php' );                   // Tools
-    remove_menu_page( 'options-general.php' );         // Settings
-    remove_menu_page( 'edit.php?post_type=potensi' );  // Potensi Desa
+    remove_menu_page( 'edit.php?post_type=potensi' );  // Potensi Desa (sudah dihapus)
 }
 
 // Ubah nama menu sidebar agar berbahasa Indonesia awam & mudah dibaca
