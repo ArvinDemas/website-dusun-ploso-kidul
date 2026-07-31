@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
             data: {
                 labels: ['Laki-laki', 'Perempuan'],
                 datasets: [{
-                    data: [515, 535],
+                    data: [457, 495],
                     backgroundColor: [colorPrimary, colorAccent],
                     borderColor: '#ffffff',
                     borderWidth: 2,
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         callbacks: {
                             label: function(context) {
                                 let val = context.raw || 0;
-                                let total = 1050;
+                                let total = 952;
                                 let pct = ((val / total) * 100).toFixed(1);
                                 return ` ${context.label}: ${val.toLocaleString('id-ID')} jiwa (${pct}%)`;
                             }
@@ -74,11 +74,11 @@ document.addEventListener('DOMContentLoaded', function () {
         new Chart(ctxAge, {
             type: 'bar',
             data: {
-                labels: ['0-14 Thn (Anak)', '15-64 Thn (Produktif)', '65+ Thn (Lansia)'],
+                labels: ['Balita (0-5)', 'Anak (6-12)', 'Remaja (13-17)', 'Dewasa (18-59)', 'Lansia (60+)'],
                 datasets: [{
                     label: 'Jumlah Jiwa',
-                    data: [215, 695, 140],
-                    backgroundColor: [colorAccentSoft, colorPrimary, colorSecondary],
+                    data: [57, 86, 67, 576, 166],
+                    backgroundColor: [colorAccentSoft, colorAccent, colorPrimaryLight, colorPrimary, colorSecondary],
                     borderRadius: 6,
                     maxBarThickness: 50
                 }]
@@ -125,17 +125,19 @@ document.addEventListener('DOMContentLoaded', function () {
             type: 'bar',
             data: {
                 labels: [
+                    'Pelajar/Mahasiswa',
+                    'Belum/Tidak Bekerja',
                     'Petani/Pekebun',
-                    'Pembudidaya Ikan',
                     'Buruh Harian Lepas',
-                    'Wiraswasta/UMKM',
                     'Karyawan Swasta',
-                    'PNS/TNI/Polri',
-                    'Lain-lain / Jasa'
+                    'Wiraswasta',
+                    'Buruh Tani',
+                    'Pedagang',
+                    'Mengurus RT'
                 ],
                 datasets: [{
-                    label: 'Kepala Keluarga',
-                    data: [108, 58, 54, 35, 27, 10, 8],
+                    label: 'Jiwa',
+                    data: [166, 147, 135, 123, 98, 85, 59, 42, 45],
                     backgroundColor: colorPrimary,
                     borderRadius: 4,
                     maxBarThickness: 20
@@ -183,9 +185,9 @@ document.addEventListener('DOMContentLoaded', function () {
         new Chart(ctxEdu, {
             type: 'polarArea',
             data: {
-                labels: ['SD/Sederajat', 'SMP/Sederajat', 'SMA/Sederajat', 'D3/Sarjana', 'Belum Sekolah'],
+                labels: ['Tamat SD', 'SLTP/Sederajat', 'SLTA/Sederajat', 'Diploma/S1+', 'Belum/Tdk Sekolah', 'Blm Tamat SD'],
                 datasets: [{
-                    data: [385, 255, 235, 80, 95],
+                    data: [257, 194, 200, 33, 135, 133],
                     backgroundColor: [
                         colorPrimary,
                         colorPrimaryLight,

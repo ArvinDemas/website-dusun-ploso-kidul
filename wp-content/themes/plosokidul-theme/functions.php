@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 // =============================================================================
 // 1. KONSTANTA TEMA
 // =============================================================================
-define( 'PLOSOKIDUL_VERSION', '1.4.0' );
+define( 'PLOSOKIDUL_VERSION', '1.6.0' );
 define( 'PLOSOKIDUL_DIR', get_template_directory() );
 define( 'PLOSOKIDUL_URI', get_template_directory_uri() );
 

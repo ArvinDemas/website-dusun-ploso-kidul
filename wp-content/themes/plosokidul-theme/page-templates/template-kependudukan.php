@@ -41,11 +41,11 @@ get_header();
 
     <div class="container page-content-container">
 
-        <!-- Notifikasi Data Sementara (WCAG AA Compliant Alert Box) -->
-        <div class="data-warning-alert" role="alert">
-            <span class="alert-icon" aria-hidden="true">⚠️</span>
+        <!-- Notifikasi Data Real -->
+        <div class="data-warning-alert" role="note" style="background: #EBF8F2; border-color: #2D6A4F;">
+            <span class="alert-icon" aria-hidden="true">✅</span>
             <div class="alert-text">
-                <strong>Informasi Penting:</strong> Seluruh data demografi, statistik, dan fasilitas di bawah ini merupakan <strong>Data Sementara Semester I Tahun 2026</strong>. Integrasi dengan sistem database kependudukan nasional sedang berjalan.
+                <strong>Data Resmi:</strong> Seluruh data demografi dan statistik di bawah ini bersumber dari <strong>Data Kependudukan Resmi Dusun Ploso Kidul Tahun 2026</strong> (Total 952 Jiwa, 327 KK).
             </div>
         </div>
 
@@ -62,22 +62,22 @@ get_header();
             <div class="kependudukan-stats-grid">
                 <div class="kependudukan-stat-card">
                     <span class="kp-stat-icon" aria-hidden="true">👥</span>
-                    <span class="kp-stat-num">1.050</span>
+                    <span class="kp-stat-num">952</span>
                     <span class="kp-stat-lbl">Total Jiwa</span>
                 </div>
                 <div class="kependudukan-stat-card">
                     <span class="kp-stat-icon" aria-hidden="true">🏠</span>
-                    <span class="kp-stat-num">300</span>
+                    <span class="kp-stat-num">327</span>
                     <span class="kp-stat-lbl">Kepala Keluarga (KK)</span>
                 </div>
                 <div class="kependudukan-stat-card">
                     <span class="kp-stat-icon" aria-hidden="true">👨</span>
-                    <span class="kp-stat-num">515</span>
+                    <span class="kp-stat-num">457</span>
                     <span class="kp-stat-lbl">Laki-laki</span>
                 </div>
                 <div class="kependudukan-stat-card">
                     <span class="kp-stat-icon" aria-hidden="true">👩</span>
-                    <span class="kp-stat-num">535</span>
+                    <span class="kp-stat-num">495</span>
                     <span class="kp-stat-lbl">Perempuan</span>
                 </div>
             </div>

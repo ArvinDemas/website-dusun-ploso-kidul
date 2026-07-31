@@ -35,9 +35,6 @@ get_header();
     // Section 3.5: Video Profil Desa (Responsive YouTube Player)
     get_template_part( 'template-parts/content/section-video' );
 
-    // Section 4: Potensi Desa (WP_Query CPT potensi, 3 kartu)
-    get_template_part( 'template-parts/content/section-potensi' );
-
     // Section 5: Berita Terbaru (WP_Query post standar, 3 kartu)
     get_template_part( 'template-parts/content/section-berita' );
     ?>
